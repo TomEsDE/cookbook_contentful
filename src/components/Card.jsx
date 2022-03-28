@@ -30,7 +30,10 @@ export default function RecipeCard({ recipe }) {
         </div>
       </div>
       <div className="card-footer d-flex align-items-end p-0 px-1">
-        <div className="card-footer-infos d-flex justify-content-end">
+        <div
+          className="card-footer-infos d-flex justify-content-end"
+          title={recipe?.rating}
+        >
           <ReactStars
             count={5}
             value={recipe?.rating}

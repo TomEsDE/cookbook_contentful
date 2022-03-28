@@ -99,7 +99,7 @@ export default function Recipe({ client }) {
                 </div> */}
 
                 {showRating && (
-                  <div className={'recipe-stars'}>
+                  <div className={'recipe-stars'} title={recipe?.rating}>
                     <ReactStars
                       count={5}
                       value={recipe?.rating}
