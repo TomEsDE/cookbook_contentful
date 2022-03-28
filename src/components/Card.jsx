@@ -1,7 +1,5 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import ReactStars from 'react-rating-stars-component';
 import './css/card.css';
 import Util from '../classes/Util';

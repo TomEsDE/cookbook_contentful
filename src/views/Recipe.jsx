@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import ReactStars from 'react-rating-stars-component';
 import { useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import { createClient } from 'contentful';
-import DetailedRecipeClass from '../classes/DetailedRecipeClass';
 import './css/recipe.css';
 
 import useBreakpoints from '../custom/useBreakpoint';
