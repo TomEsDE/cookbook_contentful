@@ -1,5 +1,4 @@
 import { Route, Routes, Link, NavLink } from 'react-router-dom';
-import { createClient } from 'contentful';
 import Footer from './views/Footer';
 import Nav from './views/Nav';
 import Landing from './views/Landing';
@@ -13,47 +12,14 @@ import './app.css';
 // import './color-schemes/blue-1.css';
 // import './color-schemes/dark-green.css';
 
-const client = createClient({
-  space: process.env.REACT_APP_SPACE_ID,
-  accessToken: process.env.REACT_APP_AUTH_TOKEN,
-});
-
 function App() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    fetchData(client);
     // cookie auslesen und ausgewaehltes Farbschema anwenden
     if (Cookies.get('colors')) Util.changeColor(Cookies.get('colors'));
     // Util.changeColor('red-1');
   }, []);
-
-  function fetchData(client) {
-    let results = client
-      .getEntries({
-        content_type: 'recipe',
-      })
-      .then(function (entries) {
-        populate(entries);
-      });
-    // console.log(results);
-  }
-
-  const populate = (u) => {
-    let a = [];
-
-    u.items.forEach((hit) => {
-      if (!hit.fields.title) return;
-      // console.log(hit);
-      const recipe = new RecipeClass(hit);
-
-      a.push(recipe);
-    });
-
-    setRecipes(a);
-
-    // console.log(a);
-  };
 
   //console.log(process.env);
 
@@ -69,7 +35,7 @@ function App() {
         <Routes>
           <Route path={`/`} element={<Landing />} />
           <Route path={`/search`} element={<SearchResults />} />
-          <Route path={`/recipe/:id`} element={<Recipe client={client} />} />
+          <Route path={`/recipe/:id`} element={<Recipe />} />
         </Routes>
       </main>
       <Footer />
