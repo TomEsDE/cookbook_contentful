@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // TODO dev-prod-Umgebungsvariable
 const apiClient = axios.create({
-  baseURL: 'https://limitless-depths-66347.herokuapp.com',
+  baseURL: process.env.REACT_APP_API_EXPRESS_HOST,
   headers: {
     'Content-type': 'application/json',
   },
