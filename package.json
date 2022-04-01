@@ -1,6 +1,5 @@
 {
   "name": "cookbook_contentful",
-  "homepage": "https://tomesde.github.io/cookbook_elephant",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
